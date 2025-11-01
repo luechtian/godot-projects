@@ -1,0 +1,27 @@
+[gd_scene load_steps=12 format=3 uid="uid://c7xvq2n8l5qad"]
+
+[ext_resource type="Script" path="res://scripts/player_shepherd.gd" id="1_shepherd"]
+[ext_resource type="Texture2D" uid="uid://dqf8k6l7n3m2p" path="res://rotations/shepherd/south.png" id="2_south"]
+[ext_resource type="Texture2D" path="res://rotations/shepherd/south-west.png" id="3_sw"]
+[ext_resource type="Texture2D" path="res://rotations/shepherd/west.png" id="4_west"]
+[ext_resource type="Texture2D" path="res://rotations/shepherd/north-west.png" id="5_nw"]
+[ext_resource type="Texture2D" path="res://rotations/shepherd/north.png" id="6_north"]
+[ext_resource type="Texture2D" path="res://rotations/shepherd/north-east.png" id="7_ne"]
+[ext_resource type="Texture2D" path="res://rotations/shepherd/east.png" id="8_east"]
+[ext_resource type="Texture2D" path="res://rotations/shepherd/south-east.png" id="9_se"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_shepherd"]
+radius = 12.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_shepherd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_south")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_shepherd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
