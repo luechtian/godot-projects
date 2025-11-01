@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://b7y8yhfv9c9qf"]
+
+[ext_resource type="Script" path="res://scripts/player_animated.gd" id="1_animated"]
+[ext_resource type="Texture2D" uid="uid://c3b4xqo5lbhqd" path="res://rotations/south.png" id="2_south"]
+[ext_resource type="Texture2D" path="res://rotations/south-west.png" id="3_sw"]
+[ext_resource type="Texture2D" path="res://rotations/west.png" id="4_west"]
+[ext_resource type="Texture2D" path="res://rotations/north-west.png" id="5_nw"]
+[ext_resource type="Texture2D" path="res://rotations/north.png" id="6_north"]
+[ext_resource type="Texture2D" path="res://rotations/north-east.png" id="7_ne"]
+[ext_resource type="Texture2D" path="res://rotations/east.png" id="8_east"]
+[ext_resource type="Texture2D" path="res://rotations/south-east.png" id="9_se"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_puggle"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_south")
+}],
+"loop": true,
+"name": &"walk_south",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sw")
+}],
+"loop": true,
+"name": &"walk_south_west",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_west")
+}],
+"loop": true,
+"name": &"walk_west",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nw")
+}],
+"loop": true,
+"name": &"walk_north_west",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_north")
+}],
+"loop": true,
+"name": &"walk_north",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ne")
+}],
+"loop": true,
+"name": &"walk_north_east",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_east")
+}],
+"loop": true,
+"name": &"walk_east",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_se")
+}],
+"loop": true,
+"name": &"walk_south_east",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_puggle"]
+radius = 12.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_animated")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_puggle")
+animation = &"walk_south"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_puggle")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

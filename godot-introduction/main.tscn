@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwyptc281s380"]
+
+[ext_resource type="Texture2D" uid="uid://bn5t7eog74s1y" path="res://Sprites/Player.png" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dqln70ms0n3np" path="res://coin.tscn" id="2_h2yge"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(449, 634)
+texture = ExtResource("1_0xm2m")
+
+[node name="Coin" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(399, 353)
+
+[node name="Coin2" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(566, 351)
+
+[node name="Coin3" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(507, 351)
+
+[node name="Coin4" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(452, 352)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxq7yhfv8b8pe"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_puggle"]
+[ext_resource type="Texture2D" uid="uid://c3b4xqo5lbhqd" path="res://rotations/south.png" id="2_south"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_puggle"]
+radius = 12.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_puggle")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_south")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_puggle")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
